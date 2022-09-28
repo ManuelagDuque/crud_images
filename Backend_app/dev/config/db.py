@@ -7,8 +7,16 @@ import cloudinary
 meta_data = MetaData()
 Base = declarative_base()
 
-engine = create_engine("mysql+pymysql://root:root@localhost/images_repository")
+engine = create_engine("mysql+pymysql://root:root@localhost:8889/images_repository")
 connection = engine.connect()
+
+cloudinary.config(
+    cloud_name='dqnn9lztw',
+    api_key='548324252741441',
+    api_secret='bDqzhAisdOldsd5A2jXV74XJ5as'
+)
+
+
 
 Session = sessionmaker(autocommit=False, bind=engine)
 
