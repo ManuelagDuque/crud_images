@@ -17,7 +17,6 @@ cloudinary.config(
 )
 
 
-
 Session = sessionmaker(autocommit=False, bind=engine)
 
 # Create DB if it doesn't exist

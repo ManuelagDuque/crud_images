@@ -2,9 +2,9 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-class User(BaseModel):
-    id: Optional[str]
-    image: str
+class Image(BaseModel):
+    id: Optional[int]
+    image: Optional[str]
     name: str
     preferred: Optional[bool]
 
