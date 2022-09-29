@@ -18,6 +18,7 @@ def root():
 def create(name: str = Form("name"), file: UploadFile = File(...)):
     result = cloudinary.uploader.upload(file.file)
     url = result.get("url")
+
     new_image = ImageModel(image=url, name=name, preferred=False)
     connexion.add(new_image)
     connexion.commit()
