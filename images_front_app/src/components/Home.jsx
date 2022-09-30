@@ -8,6 +8,20 @@ function Home() {
     return (
     <div>
         <h1>Images Repository</h1>
+        <div>
+          {
+            data.map(image =>(
+              <div key={image.id} className="card">
+                <img src={image.image} className="card-img-top" alt={image.name}/>
+                <div className="card-body">
+                  <h5 className="card-title">{image.name}</h5>
+                  <button type="submit" className="btn btn-primary">Edit</button>
+                  <button type="submit" className="btn btn-primary">Delete</button>
+                </div>
+              </div>
+            ))
+          }
+        </div>
     </div>
   )
 }

@@ -1,19 +1,19 @@
 import {useEffect, useState} from 'react';
 
-function useImagesAPI() {
+function useImagesAPI(url) {
   /** Hook state*/
   const [data, setData] = useState([])
   
   /** Hook effect*/
   useEffect(() => {
-    const apiData = async () => {
-      let apiResponse = await fetch()
+    const apiData = async (url) => {
+      let apiResponse = await fetch(url)
       let images = await apiResponse.json()
       setData(images)
       console.log(images)
     }
-    apiData()
-  }, [data])
+    apiData(url)
+  }, [url])
 
   return {data}
 
