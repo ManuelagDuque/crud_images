@@ -6,17 +6,20 @@ function Home() {
     let {data} = useImagesAPI(url)
     console.log(data)
     return (
-    <div>
+    <div className="ms-4 me-4 mt-5 mb-5 border body-container">
         <h1>Images Repository</h1>
-        <div>
+        <div className="border">
+        <button type="submit" className="btn btn-success">Create</button>
+        </div>
+        <div className="border card-container d-flex p-2 justify-content-around">
           {
             data.map(image =>(
-              <div key={image.id} className="card">
+              <div key={image.id} className="card card-style border">
                 <img src={image.image} className="card-img-top" alt={image.name}/>
                 <div className="card-body">
                   <h5 className="card-title">{image.name}</h5>
                   <button type="submit" className="btn btn-primary">Edit</button>
-                  <button type="submit" className="btn btn-primary">Delete</button>
+                  <button type="submit" className="btn btn-danger">Delete</button>
                 </div>
               </div>
             ))
