@@ -18,6 +18,9 @@ function Home() {
                 <img src={image.image} className="card-img-top" alt={image.name}/>
                 <div className="card-body">
                   <h5 className="card-title">{image.name}</h5>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" className="bi bi-star" id="exampleCheck1"/>
+                  </div>
                   <button type="submit" className="btn btn-primary">Edit</button>
                   <button type="submit" className="btn btn-danger">Delete</button>
                 </div>
