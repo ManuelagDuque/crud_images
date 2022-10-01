@@ -14,17 +14,19 @@ function Home() {
         <div className="border card-container d-flex p-2 justify-content-around">
           {
             data.map(image =>(
-              <div key={image.id} className="card card-style border di-flex justify con">
-                <div className='card-image-container'>
+              <div key={image.id} className="card card-style border di-flex align-items-center">
+                <div className='card-image-container mt-3'>
                   <img src={image.image} className="card-img-top card-image" alt={image.name}/>
                 </div>
-                <div className="card-body">
+                <div className="card-body border">
                   <h5 className="card-title">{image.name}</h5>
                   <div class="mb-3 form-check">
                     <input type="checkbox" className="bi bi-star" id="exampleCheck1"/>
                   </div>
-                  <button type="submit" className="btn btn-primary">Edit</button>
-                  <button type="submit" className="btn btn-danger">Delete</button>
+                  <div className="card-buttons d-flex justify-content-around border">
+                    <button type="submit" className="btn btn-primary">Edit</button>
+                    <button type="submit" className="btn btn-danger">Delete</button>
+                  </div>
                 </div>
               </div>
             ))
