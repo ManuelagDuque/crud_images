@@ -13,7 +13,7 @@ code {
 }
 
 .body-container {
-  height: 100vh;  
+  height: auto;  
 }
 
 .card-container {
@@ -21,13 +21,13 @@ code {
 }
 
 .card-style {
-  width: 18rem;
+  width: 50vh !important;
   height: 60vh !important;
 }
 
 .card-image-container{
   width: 90% !important;
-  height: 60% !important; 
+  height: 70% !important; 
 }
 
 .card-image{
@@ -42,4 +42,12 @@ code {
 
 .card-buttons{
   width: 100% !important;
+}
+
+.punctuation-icon{
+  width: 50% !important;
+}
+
+.management-icon{
+  width: 50% !important;
 }
