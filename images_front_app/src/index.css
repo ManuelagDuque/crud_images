@@ -24,3 +24,14 @@ code {
   width: 18rem;
   height: 60vh !important;
 }
+
+.card-image-container{
+  width: 90% !important;
+  height: 60% !important; 
+}
+
+.card-image{
+  width: 100% !important;
+  height: 100% !important;
+  background-size: contain !important;
+}
