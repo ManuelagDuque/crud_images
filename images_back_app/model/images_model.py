@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy_utils import URLType
-from config.db import Base, engine
+from config.db_connection import Base, engine
 
 
 class Image(Base):

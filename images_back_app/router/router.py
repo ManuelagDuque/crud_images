@@ -1,4 +1,4 @@
-from config.db import Session
+from config.db_connection import Session
 from fastapi import APIRouter, Form, Path
 from model.images_model import Image as ImageModel
 import cloudinary
