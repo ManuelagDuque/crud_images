@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import useImagesAPI from '../hooks/useImagesAPI';
 import {TrashIcon, PencilIcon, StarIcon} from '@primer/octicons-react'
+import {Link} from 'react-router-dom'
 
 function Home() {
+
+
     let url = 'http://127.0.0.1:8000/image' 
     let {data} = useImagesAPI(url)
     console.log(data)
@@ -20,7 +23,9 @@ function Home() {
     <div className="ms-4 me-4 mt-5 mb-5 body-container">
         <h1>Images Repository</h1>
         <div className="mt-5 mb-5 d-flex justify-content-center">
-          <button type="submit" className="btn btn-success">Add Image</button>
+          <Link to='/create'>
+            <button type="submit" className="btn btn-success">Add Image</button>
+          </Link>
         </div>
         <div className="card-container d-flex p-2 justify-content-around flex-wrap">
           {
