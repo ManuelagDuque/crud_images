@@ -21,21 +21,21 @@ This is a guide on how to install. You can adapt it to your operating system and
 
 ### Prerequisites
 This project has some requirements that must be fulfilled before starting the installation:
-- Python 3.9
-- Node 18.9.0
-- Pip 21.3.1
-- Cloudinary account
-- MySQL (phpMyAdmin is a good option)
-- Install libraries dependencies (python requirements.txt and react package.json)
-- Configure your Environment variables
-- Running the tests
+- Python 3.9,
+- Node 18.9.0,
+- Pip 21.3.1,
+- Cloudinary account,
+- MySQL (phpMyAdmin is a good option),
+- Install libraries dependencies (python requirements.txt and react package.json),
+- Configure your Environment variables,
+- Running the tests.
 
 ## Create Cloudinary account
 Create a account in cloudinary webpage https://cloudinary.com/. 
 Once you have it, go to the dashboard section and write down the following values to configure the environment variables (next step)
 - Cloud Name,
-- API Key
-- API Secret
+- API Key,
+- API Secret.
 
 ## Environment variables
 Make sure you have modified the environment variables for: 
@@ -63,7 +63,21 @@ uvicorn main:app --reload
 ```
 Remember that when you run it you can go to query your MySQL database to see if the database and table were created successfully.
 
+Now go to the end-point and start to using the API.
+
 Please don't close the service.
+
+## Running the React application
+From another terminal, open the images_front_app folder. 
+Execute the following command in order to installate the dependencies ot the local node_modules:
+```shell
+npm install
+```
+In the same terminal and same folder, execute the following command to launch the application service:
+```shell
+npm start
+```
+Now go to the end-point and start to using the front.
 
 ## Running the tests
 All the functions of the project have associated unit tests to verify that everything works correctly. These tests can be executed in several ways:
@@ -80,15 +94,3 @@ coverage run -m unittest discover
 ```shell
 coverage report
 ```
-
-## Running the React application
-From another terminal, open the images_front_app folder. 
-Execute the following command in order to installate the dependencies ot the local node_modules:
-```shell
-npm install
-```
-In the same terminal and same folder, execute the following command to launch the application service:
-```shell
-npm start
-```
-
