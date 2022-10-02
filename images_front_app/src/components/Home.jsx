@@ -7,7 +7,7 @@ function Home() {
     let url = 'http://127.0.0.1:8000/image' 
     let {data} = useImagesAPI(url)
 
-    const {id} = useParams()
+    //const {id} = useParams()
 
     const search = () =>{
       data.forEach(element => {

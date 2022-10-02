@@ -65,7 +65,7 @@ Remember that when you run it you can go to query your MySQL database to see if 
 
 Now go to the end-point and start to using the API http://127.0.0.1:8000/docs#.
 
-<img src='images_back_app/test/test_resources/API_wsgi.png'/>
+<img src='images_example/API_wsgi.png'/>
 
 Please don't close the service.
 
@@ -79,7 +79,10 @@ In the same terminal and same folder, execute the following command to launch th
 ```shell
 npm start
 ```
-Now go to the end-point and start to using the front.
+Now go to the end-point and start to using the front http://localhost:3000/.
+
+<img src='iimages_example/front_collection.png'/>
+<img src='iimages_example/form_create.png'/>
 
 ## Running the tests
 All the functions of the project have associated unit tests to verify that everything works correctly. These tests can be executed in several ways:
