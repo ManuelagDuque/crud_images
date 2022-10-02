@@ -18,7 +18,6 @@ def root():
 def create(name: str = Form("name"), file: UploadFile = File(...), preferred: bool = Form(False)):
     result = cloudinary.uploader.upload(file.file)
     url = result.get("url")
-
     new_image = ImageModel(image=url, name=name, preferred=preferred)
     connexion.add(new_image)
     connexion.commit()
@@ -39,7 +38,6 @@ def list_all():
 
 @api.put("/image/{id}")
 def edit(id: int, name: str = Form("name"), preferred: bool = Form(False)):
-
     image_to_update = connexion.query(ImageModel).filter(ImageModel.id == id).first()
     image_to_update.name = name
     image_to_update.preferred = preferred
