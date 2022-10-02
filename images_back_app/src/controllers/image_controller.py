@@ -2,6 +2,7 @@ import cloudinary
 import cloudinary.uploader
 import config.messages as msg
 from fastapi import File, UploadFile
+from fastapi import Path
 from config.db_connection import Session
 from model.images_model import Image as ImageModel
 
@@ -15,7 +16,8 @@ class ImageController:
     preferred: bool
     id: int
 
-    def __init__(self, image: UploadFile = File(...), name: str = None, preferred: bool = None, image_id: int = None):
+    def __init__(self, image: UploadFile = File(...), name: str = None, preferred: bool = None,
+                 image_id: int = None):
         self.image = image
         self.name = name
         self. preferred = preferred
@@ -32,3 +34,7 @@ class ImageController:
         except ConnectionError:
             message = msg.IMAGE_CREATED_KO
         return new_image, message
+
+    def list_one_image(self):
+        image = connexion.query(ImageModel).filter(ImageModel.id == self.id).first()
+        return image

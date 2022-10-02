@@ -1,4 +1,4 @@
-# Microservice SANITY CHECK
+# IMAGES REPOSITORY PROJECT
 This project was built to allow the management of a collection of images. 
 
 Is designed under the following criteria:
@@ -38,9 +38,9 @@ Once you have it, go to the dashboard section and write down the following value
 - API Secret.
 
 ## Environment variables
-Make sure you have modified the environment variables for: 
-- Connect to the database: 
-- Connect to Cloudinary: 
+Make sure you have modified the environment variables into images_back_app/config/constants.py to:
+- Connect to the MySQL Database
+- Connect to Cloudinary
 
 ## Running the MySQL
 Make sure that you have the service for the database running.
