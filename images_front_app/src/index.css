@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.body-container {
+  height: auto;  
+}
+
+.card-container {
+  height: 100%;
+}
+
+.card-style {
+  width: 50vh !important;
+  height: 60vh !important;
+}
+
+.card-image-container{
+  width: 90% !important;
+  height: 70% !important; 
+}
+
+.card-image{
+  width: 100% !important;
+  height: 100% !important;
+  background-size: contain !important;
+}
+
+.card-body{
+  width: 100% !important;
+}
+
+.card-buttons{
+  width: 100% !important;
+}
+
+.punctuation-icon{
+  width: 50% !important;
+}
+
+.management-icon{
+  width: 50% !important;
+}

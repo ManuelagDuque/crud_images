@@ -1,3 +1,5 @@
+# --------------------------------- BACK-END APP --------------------------------------------------------
+ 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +129,44 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/**/*._DS_Store
+
+# --------------------------------- FRONT-END APP --------------------------------------------------------
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+
+#--------------------------------------- IDLE ------------------------------------------------
+.idea
+idea/
+/idea
+
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Backup ###
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Allowed Exceptions
+!requirements.txt
