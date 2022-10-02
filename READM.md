@@ -72,6 +72,8 @@ All the functions of the project have associated unit tests to verify that every
   - Install `coverage` library and use it to run the tests:
 ```shell
 pip install coverage
+```
+```shell
 coverage run -m unittest discover
 ```
   - To obtain the test and coverage reports execute:
