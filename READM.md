@@ -81,8 +81,8 @@ npm start
 ```
 Now go to the end-point and start to using the front http://localhost:3000/.
 
-<img src='iimages_example/front_collection.png'/>
-<img src='iimages_example/form_create.png'/>
+<img src='images_example/front_collection.png'/>
+<img src='images_example/form_create.png'/>
 
 ## Running the tests
 All the functions of the project have associated unit tests to verify that everything works correctly. These tests can be executed in several ways:
