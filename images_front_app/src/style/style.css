@@ -5,3 +5,7 @@
 .form-file-label{
     font-weight: bold !important;
 }
+
+.form-file-check{
+    width: 10% !important;
+}

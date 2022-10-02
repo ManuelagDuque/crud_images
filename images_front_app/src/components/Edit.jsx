@@ -1,10 +1,13 @@
 import React from 'react';
+import useImagesAPI from '../hooks/useImagesAPI';
 import {XCircleFillIcon} from '@primer/octicons-react';
 import useCreateImages from '../hooks/useCreateImages';
 import {Link} from 'react-router-dom'
 import '../style/style.css';
 
-function Form() {
+function Edit() {
+    let url = 'http://127.0.0.1:8000/image' 
+    let {data} = useImagesAPI(url)
 
     const {register, handleSubmit, handlePref, create} = useCreateImages()
 
@@ -23,14 +26,20 @@ function Form() {
                         <input type="file" className="form-control" name="file" {...register('file', {required: true})} />
                     </div>
                 </div>
-                <div className="mb-3">
-                    <label className="form-label form-file-label">Name</label>
-                    <input type="text" className="form-control" name="name" {...register('name', {required: true})} />
-                </div>
-                <div className="form-check form-file-check">
-                    <input type="checkbox" className="form-check-input" name="preferred" onChange={handlePref} {...register('preferred')}/>
-                    <label className="form-check-label">Favourite?</label>
-                </div>
+                {
+                    data.map(image =>(
+                        <div>
+                            <div className="mb-3">
+                            <label className="form-label form-file-label">Name</label>
+                            <input type="text" className="form-control" name="name" value={image.name} {...register('name', {required: true})} />
+                        </div>
+                        <div className="form-check form-file-check">
+                            <input type="checkbox" className="form-check-input" name="preferred" onChange={handlePref} {...register('preferred')}/>
+                            <label className="form-check-label">Favourite?</label>
+                        </div>
+                        </div> 
+                    ))
+                }
                 <button type="submit" className="btn btn-primary mt-3 mb-3">Save</button>
             </form>
         </div>
@@ -38,4 +47,4 @@ function Form() {
   )
 }
 
-export default Form;
+export default Edit;

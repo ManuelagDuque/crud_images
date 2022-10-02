@@ -10,7 +10,6 @@ function useImagesAPI(url) {
       let apiResponse = await fetch(url)
       let images = await apiResponse.json()
       setData(images)
-      console.log(images)
     }
     apiData(url)
   }, [url])
