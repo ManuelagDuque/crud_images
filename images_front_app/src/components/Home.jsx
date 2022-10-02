@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useImagesAPI from '../hooks/useImagesAPI';
 import {TrashIcon, PencilIcon, StarIcon} from '@primer/octicons-react'
 
@@ -6,6 +6,16 @@ function Home() {
     let url = 'http://127.0.0.1:8000/image' 
     let {data} = useImagesAPI(url)
     console.log(data)
+    const [starColor, setStarColor] = useState('#00000')
+    const handleStarColor = () => {
+      data.forEach(element => {
+          if(element.preferred === 1){
+            setStarColor('FFFF00')
+          }else{
+            setStarColor('#000000')
+          }
+      });
+    }
     return (
     <div className="ms-4 me-4 mt-5 mb-5 body-container">
         <h1>Images Repository</h1>
@@ -21,8 +31,8 @@ function Home() {
                 </div>
                 <div className="card-body">
                   <div className="d-flex justify-content-around">
-                    <div className="card-buttons d-flex justify-content-start punctuation-icon">
-                      <StarIcon size={30} fill="#ffca00" />
+                    <div onClick={handleStarColor} className="card-buttons d-flex justify-content-start punctuation-icon">
+                      <StarIcon size={30} fill={starColor} />
                     </div>
                     <div className="card-buttons d-flex justify-content-around management-icon">
                       <PencilIcon size={30} fill="#0077fd" />
