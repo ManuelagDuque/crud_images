@@ -15,11 +15,11 @@ def root():
 
 
 @api.post("/image")
-def create(name: str = Form("name"), file: UploadFile = File(...)):
+def create(name: str = Form("name"), file: UploadFile = File(...), preferred: bool = Form("preferred")):
     result = cloudinary.uploader.upload(file.file)
     url = result.get("url")
 
-    new_image = ImageModel(image=url, name=name, preferred=False)
+    new_image = ImageModel(image=url, name=name, preferred=preferred)
     connexion.add(new_image)
     connexion.commit()
     return new_image

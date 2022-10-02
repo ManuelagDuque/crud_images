@@ -8,7 +8,7 @@ class Image(Base):
     id = Column(Integer, primary_key=True)
     image = Column(String(1000), nullable=False)
     name = Column(String(250), nullable=False)
-    preferred = Column(Boolean, nullable=True)
+    preferred = Column(Boolean, default=False, nullable=False)
 
 
 Base.metadata.create_all(engine)
