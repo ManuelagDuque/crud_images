@@ -2,7 +2,6 @@ import cloudinary
 import cloudinary.uploader
 import config.messages as msg
 from fastapi import File, UploadFile
-from fastapi import Path
 from config.db_connection import Session
 from model.images_model import Image as ImageModel
 
@@ -38,3 +37,20 @@ class ImageController:
     def list_one_image(self):
         image = connexion.query(ImageModel).filter(ImageModel.id == self.id).first()
         return image
+
+    def list_all_images(self):
+        images = connexion.query(ImageModel).all()
+        return images
+
+    def edit(self):
+        image_to_update = connexion.query(ImageModel).filter(ImageModel.id == self.id).first()
+        image_to_update.name = self.name
+        image_to_update.preferred = self.preferred
+        connexion.commit()
+        return image_to_update
+
+    def delete(self):
+        image = connexion.query(ImageModel).filter(ImageModel.id == self.id).first()
+        connexion.delete(image)
+        connexion.commit()
+        return {'message': 'image deleted', 'id': self.id}

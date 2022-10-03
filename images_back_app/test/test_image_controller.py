@@ -3,7 +3,6 @@ import unittest
 from config import constants_test, messages
 from src.controllers.image_controller import ImageController
 from fastapi import File
-from fastapi import Path
 from model.images_model import Image as ImageModel
 
 
